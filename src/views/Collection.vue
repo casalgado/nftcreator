@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <button @click="showCollection">generate</button>
+    <button @click="downloadCollection">download</button>
     <div class="container">
       <img v-for="n in collectionSize" :key="n" :id="`img${n - 1}`" />
     </div>
@@ -17,26 +18,27 @@ export default {
   data() {
     return {
       metadata: [],
-      collectionSize: 100,
+      collectionSize: 50,
+      trait_distribution: {},
       traits: [
         {
           category: "fondo",
           distribution: [
-            { trait_value: "1", url: "BG", amount: 7 },
-            { trait_value: "2", url: "BG", amount: 7 },
-            { trait_value: "3", url: "BG", amount: 7 },
-            { trait_value: "4", url: "BG", amount: 7 },
-            { trait_value: "5", url: "BG", amount: 7 },
-            { trait_value: "6", url: "BG", amount: 7 },
-            { trait_value: "7", url: "BG", amount: 7 },
-            { trait_value: "8", url: "BG", amount: 7 },
-            { trait_value: "9", url: "BG", amount: 7 },
-            { trait_value: "10", url: "BG", amount: 7 },
-            { trait_value: "11", url: "BG", amount: 6 },
-            { trait_value: "12", url: "BG", amount: 6 },
-            { trait_value: "13", url: "BG", amount: 6 },
-            { trait_value: "14", url: "BG", amount: 6 },
-            { trait_value: "15", url: "BG", amount: 6 },
+            { trait_value: "1", url: "BG", amount: 1 },
+            { trait_value: "2", url: "BG", amount: 1 },
+            { trait_value: "3", url: "BG", amount: 1 },
+            { trait_value: "4", url: "BG", amount: 1 },
+            { trait_value: "5", url: "BG", amount: 1 },
+            { trait_value: "6", url: "BG", amount: 1 },
+            { trait_value: "7", url: "BG", amount: 1 },
+            { trait_value: "8", url: "BG", amount: 1 },
+            { trait_value: "9", url: "BG", amount: 1 },
+            { trait_value: "10", url: "BG", amount: 1 },
+            { trait_value: "11", url: "BG", amount: 1 },
+            { trait_value: "12", url: "BG", amount: 1 },
+            { trait_value: "13", url: "BG", amount: 1 },
+            { trait_value: "14", url: "BG", amount: 1 },
+            { trait_value: "15", url: "BG", amount: 1 },
           ],
         },
         {
@@ -45,60 +47,60 @@ export default {
             {
               trait_value: "amarillo",
               url: "CUERPO",
-              amount: 33,
+              amount: 1,
               variant: "A",
             },
-            { trait_value: "maduro", url: "CUERPO", amount: 33 },
-            { trait_value: "verde", url: "CUERPO", amount: 34 },
+            { trait_value: "maduro", url: "CUERPO", amount: 1 },
+            { trait_value: "verde", url: "CUERPO", amount: 1 },
           ],
         },
         {
           category: "boca",
           distribution: [
-            { trait_value: "def", url: "BOCA", amount: 13 },
-            { trait_value: "dientes", url: "BOCA", amount: 13 },
-            { trait_value: "kike", url: "BOCA", amount: 13 },
-            { trait_value: "mellow", url: "BOCA", amount: 13 },
-            { trait_value: "angry", url: "BOCA", amount: 12 },
-            { trait_value: "spartan", url: "BOCA", amount: 12 },
-            { trait_value: "mono", url: "BOCA", amount: 12 },
-            { trait_value: "tee", url: "BOCA", amount: 12 },
+            { trait_value: "def", url: "BOCA", amount: 1 },
+            { trait_value: "dientes", url: "BOCA", amount: 1 },
+            { trait_value: "kike", url: "BOCA", amount: 1 },
+            { trait_value: "mellow", url: "BOCA", amount: 1 },
+            { trait_value: "angry", url: "BOCA", amount: 1 },
+            { trait_value: "spartan", url: "BOCA", amount: 1 },
+            { trait_value: "mono", url: "BOCA", amount: 1 },
+            { trait_value: "tee", url: "BOCA", amount: 1 },
           ],
         },
         {
           category: "cabeza",
           distribution: [
-            { trait_value: "1", url: "HEAD", amount: 12 },
-            { trait_value: "2", url: "HEAD", amount: 12 },
-            { trait_value: "3", url: "HEAD", amount: 12 },
-            { trait_value: "4", url: "HEAD", amount: 12 },
-            { trait_value: "5", url: "HEAD", amount: 13 },
-            { trait_value: "6", url: "HEAD", amount: 13 },
-            { trait_value: "7", url: "HEAD", amount: 13 },
-            { trait_value: "8", url: "HEAD", amount: 13 },
+            { trait_value: "1", url: "HEAD", amount: 1 },
+            { trait_value: "2", url: "HEAD", amount: 1 },
+            { trait_value: "3", url: "HEAD", amount: 1 },
+            { trait_value: "4", url: "HEAD", amount: 1 },
+            { trait_value: "5", url: "HEAD", amount: 1 },
+            { trait_value: "6", url: "HEAD", amount: 1 },
+            { trait_value: "7", url: "HEAD", amount: 1 },
+            { trait_value: "8", url: "HEAD", amount: 1 },
           ],
         },
         {
           category: "ojos",
           distribution: [
-            { trait_value: "1", url: "OJOS", amount: 10 },
-            { trait_value: "2", url: "OJOS", amount: 9 },
-            { trait_value: "3", url: "OJOS", amount: 9 },
-            { trait_value: "4", url: "OJOS", amount: 9 },
-            { trait_value: "5", url: "OJOS", amount: 9 },
-            { trait_value: "6", url: "OJOS", amount: 9 },
-            { trait_value: "7", url: "OJOS", amount: 9 },
-            { trait_value: "8", url: "OJOS", amount: 9 },
-            { trait_value: "9", url: "OJOS", amount: 9 },
-            { trait_value: "10", url: "OJOS", amount: 9 },
-            { trait_value: "11", url: "OJOS", amount: 9 },
+            { trait_value: "1", url: "OJOS", amount: 1 },
+            { trait_value: "2", url: "OJOS", amount: 1 },
+            { trait_value: "3", url: "OJOS", amount: 1 },
+            { trait_value: "4", url: "OJOS", amount: 1 },
+            { trait_value: "5", url: "OJOS", amount: 1 },
+            { trait_value: "6", url: "OJOS", amount: 1 },
+            { trait_value: "7", url: "OJOS", amount: 1 },
+            { trait_value: "8", url: "OJOS", amount: 1 },
+            { trait_value: "9", url: "OJOS", amount: 1 },
+            { trait_value: "10", url: "OJOS", amount: 1 },
+            { trait_value: "11", url: "OJOS", amount: 1 },
           ],
         },
         {
           category: "porro",
           distribution: [
-            { trait_value: "porro", url: "PORRO", amount: 20 },
-            { trait_value: "no", url: "NONE", amount: 80 },
+            { trait_value: "porro", url: "PORRO", amount: 2 },
+            { trait_value: "no", url: "NONE", amount: 8 },
           ],
         },
       ],
@@ -123,8 +125,35 @@ export default {
         return "V";
       }
     },
+    calculateTraitAmountsBasedOnCollectionSize: function (traits) {
+      for (let i = 0; i < traits.length; i++) {
+        const trait = traits[i];
+        let relative_variance = trait.distribution.map((e) => {
+          return e.amount;
+        });
+        // reset distributions
+        trait.distribution = trait.distribution.map((e) => {
+          e.amount = 0;
+          return e;
+        });
+        console.log(trait.distribution);
+        let allocated = 0;
+        for (let j = 0; j < this.collectionSize; j++) {
+          let index = j % relative_variance.length;
+          trait.distribution[index].amount += relative_variance[index];
+          allocated += relative_variance[index];
+          if (allocated >= this.collectionSize) {
+            let difference = allocated - this.collectionSize;
+            trait.distribution[index].amount -= difference;
+            break;
+          }
+        }
+        console.log(allocated);
+        console.log(trait.distribution);
+      }
+      return traits;
+    },
     modifyUrlBasedOnBodyColor: function (attributes) {
-      console.log(attributes);
       let modified = attributes.boca.map((e, i) => {
         return {
           value: e.value,
@@ -142,7 +171,7 @@ export default {
       attributes.boca = modified;
       return attributes;
     },
-    generateAttributeArrays: function (trait_object) {
+    generateTraitDistributions: function (trait_object) {
       /**
        in this method, an attributes objects will be created where the keys are the traits and the values are the trait distributions
        it will have the form: 
@@ -153,8 +182,8 @@ export default {
        {value: '', url: ''}
        */
       let traits = JSON.parse(JSON.stringify(trait_object));
+      traits = this.calculateTraitAmountsBasedOnCollectionSize(traits);
       let attributes = {};
-
       for (let i = 0; i < traits.length; i++) {
         attributes[traits[i].category] = [];
         for (let k = 0; k < traits[i].distribution.length; k++) {
@@ -175,23 +204,24 @@ export default {
     },
     showCollection: function () {
       this.metadata = [];
-      let attributes = this.generateAttributeArrays(this.traits);
+      this.trait_distribution = this.generateTraitDistributions(this.traits);
+      let trait_distribution = this.trait_distribution;
       for (let i = 0; i < this.collectionSize; i++) {
         let delay = i * 5;
         setTimeout(
           function () {
             let id = "img" + i;
-            //let metadata = this.createMetadata(attributes, i);
+            let metadata = this.createMetadata(trait_distribution, i);
             //this.downloadMetadata(metadata, i);
-            //this.metadata.push(metadata);
+            this.metadata.push(metadata);
 
             mergeImages([
-              this.src(attributes.fondo[i].url),
-              this.src(attributes.cuerpo[i].url),
-              this.src(attributes.boca[i].url),
-              this.src(attributes.cabeza[i].url),
-              this.src(attributes.ojos[i].url),
-              this.src(attributes.porro[i].url),
+              this.src(trait_distribution.fondo[i].url),
+              this.src(trait_distribution.cuerpo[i].url),
+              this.src(trait_distribution.boca[i].url),
+              this.src(trait_distribution.cabeza[i].url),
+              this.src(trait_distribution.ojos[i].url),
+              this.src(trait_distribution.porro[i].url),
             ]).then((b64) => {
               document.getElementById(id).src = b64;
             });
@@ -200,13 +230,39 @@ export default {
         );
       }
     },
-    downloadCollection: function () {},
+    downloadCollection: function () {
+      let trait_distribution = this.trait_distribution;
+      for (let i = 0; i < this.collectionSize; i++) {
+        let delay = i * 500;
+        setTimeout(
+          function () {
+            let id = "img" + i;
+            let metadata = this.metadata[i];
+            this.downloadMetadata(metadata, i);
+
+            mergeImages([
+              this.src(trait_distribution.fondo[i].url),
+              this.src(trait_distribution.cuerpo[i].url),
+              this.src(trait_distribution.boca[i].url),
+              this.src(trait_distribution.cabeza[i].url),
+              this.src(trait_distribution.ojos[i].url),
+              this.src(trait_distribution.porro[i].url),
+            ]).then((b64) => {
+              console.log(b64);
+              document.getElementById(id).src = b64;
+              saveAs(b64, `${i}.png`);
+            });
+          }.bind(this),
+          delay
+        );
+      }
+    },
     createMetadata: function (attributes, index) {
       let metadata = JSON.parse(JSON.stringify(standard));
-      metadata.name = `palmera ${index + 1}`;
+      metadata.name = `mnkbnn ${index + 1}`;
       metadata.description = `A collection of ${
         this.collectionSize
-      } palms on the blockchain. This is palm number ${index + 1}/${
+      } mnkbnn's on the blockchain. This is mnkbnn number ${index + 1}/${
         this.collectionSize
       }`;
       metadata.image = `${index}.png`;
