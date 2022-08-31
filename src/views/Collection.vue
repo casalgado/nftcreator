@@ -18,88 +18,91 @@ export default {
   data() {
     return {
       metadata: [],
-      collectionSize: 50,
+      collectionSize: 222,
       trait_distribution: {},
       traits: [
         {
           category: "fondo",
           distribution: [
-            { trait_value: "1", url: "BG", amount: 1 },
-            { trait_value: "2", url: "BG", amount: 1 },
-            { trait_value: "3", url: "BG", amount: 1 },
-            { trait_value: "4", url: "BG", amount: 1 },
-            { trait_value: "5", url: "BG", amount: 1 },
-            { trait_value: "6", url: "BG", amount: 1 },
-            { trait_value: "7", url: "BG", amount: 1 },
-            { trait_value: "8", url: "BG", amount: 1 },
-            { trait_value: "9", url: "BG", amount: 1 },
-            { trait_value: "10", url: "BG", amount: 1 },
-            { trait_value: "11", url: "BG", amount: 1 },
-            { trait_value: "12", url: "BG", amount: 1 },
-            { trait_value: "13", url: "BG", amount: 1 },
-            { trait_value: "14", url: "BG", amount: 1 },
-            { trait_value: "15", url: "BG", amount: 1 },
+            { trait_value: "Haze", url: "BG", amount: 4 },
+            { trait_value: "YCNSM", url: "BG", amount: 4 },
+            { trait_value: "Pixelated", url: "BG", amount: 4 },
+            { trait_value: "Uva", url: "BG", amount: 15 },
+            { trait_value: "Esmeralda", url: "BG", amount: 15 },
+            { trait_value: "Pasto", url: "BG", amount: 15 },
+            { trait_value: "Mango", url: "BG", amount: 15 },
+            { trait_value: "Indigo", url: "BG", amount: 15 },
+            { trait_value: "Melon", url: "BG", amount: 15 },
+            { trait_value: "Manzana", url: "BG", amount: 15 },
+            { trait_value: "Ponche", url: "BG", amount: 16 },
+            { trait_value: "Durazno", url: "BG", amount: 16 },
+            { trait_value: "Ceruleo", url: "BG", amount: 16 },
+            { trait_value: "Orquidea", url: "BG", amount: 16 },
+            { trait_value: "Purpura", url: "BG", amount: 16 },
           ],
         },
         {
           category: "cuerpo",
           distribution: [
             {
-              trait_value: "amarillo",
+              trait_value: "Banano",
               url: "CUERPO",
-              amount: 1,
+              amount: 5,
               variant: "A",
             },
-            { trait_value: "maduro", url: "CUERPO", amount: 1 },
-            { trait_value: "verde", url: "CUERPO", amount: 1 },
+            { trait_value: "Maduro", url: "CUERPO", amount: 3 },
+            { trait_value: "Platano", url: "CUERPO", amount: 2 },
           ],
         },
         {
           category: "boca",
           distribution: [
-            { trait_value: "def", url: "BOCA", amount: 1 },
-            { trait_value: "dientes", url: "BOCA", amount: 1 },
-            { trait_value: "kike", url: "BOCA", amount: 1 },
-            { trait_value: "mellow", url: "BOCA", amount: 1 },
-            { trait_value: "angry", url: "BOCA", amount: 1 },
-            { trait_value: "spartan", url: "BOCA", amount: 1 },
-            { trait_value: "mono", url: "BOCA", amount: 1 },
-            { trait_value: "tee", url: "BOCA", amount: 1 },
+            { trait_value: "Mellow", url: "BOCA", amount: 9 },
+            { trait_value: "Coraje", url: "BOCA", amount: 5 },
+            { trait_value: "Kike", url: "BOCA", amount: 5 },
+            { trait_value: "Smile", url: "BOCA", amount: 9 },
+            { trait_value: "The Mask", url: "BOCA", amount: 5 },
+            { trait_value: "Samurai", url: "BOCA", amount: 3 },
+            { trait_value: "R2", url: "BOCA", amount: 5 },
+            { trait_value: "Mono", url: "BOCA", amount: 5 },
+            { trait_value: "Tres Dias", url: "BOCA", amount: 5 },
           ],
         },
         {
           category: "cabeza",
           distribution: [
-            { trait_value: "1", url: "HEAD", amount: 1 },
-            { trait_value: "2", url: "HEAD", amount: 1 },
-            { trait_value: "3", url: "HEAD", amount: 1 },
-            { trait_value: "4", url: "HEAD", amount: 1 },
-            { trait_value: "5", url: "HEAD", amount: 1 },
-            { trait_value: "6", url: "HEAD", amount: 1 },
-            { trait_value: "7", url: "HEAD", amount: 1 },
-            { trait_value: "8", url: "HEAD", amount: 1 },
+            { trait_value: "MNKY Cafe", url: "HEAD", amount: 1 },
+            { trait_value: "Midnight Language", url: "HEAD", amount: 1 },
+            { trait_value: "Beanie Beta", url: "HEAD", amount: 3 },
+            { trait_value: "MNKY Gris", url: "HEAD", amount: 2 },
+            { trait_value: "Peeled", url: "HEAD", amount: 4 },
+            { trait_value: "Bombin", url: "HEAD", amount: 6 },
+            { trait_value: "Fuego", url: "HEAD", amount: 1 },
+            { trait_value: "Mono", url: "HEAD", amount: 6 },
+            { trait_value: "Banana", url: "HEAD", amount: 4 },
+            { trait_value: "Gorra Ramo", url: "HEAD", amount: 2 },
           ],
         },
         {
           category: "ojos",
           distribution: [
-            { trait_value: "1", url: "OJOS", amount: 1 },
-            { trait_value: "2", url: "OJOS", amount: 1 },
-            { trait_value: "3", url: "OJOS", amount: 1 },
-            { trait_value: "4", url: "OJOS", amount: 1 },
-            { trait_value: "5", url: "OJOS", amount: 1 },
-            { trait_value: "6", url: "OJOS", amount: 1 },
-            { trait_value: "7", url: "OJOS", amount: 1 },
-            { trait_value: "8", url: "OJOS", amount: 1 },
-            { trait_value: "9", url: "OJOS", amount: 1 },
-            { trait_value: "10", url: "OJOS", amount: 1 },
-            { trait_value: "11", url: "OJOS", amount: 1 },
+            { trait_value: "MNKY", url: "OJOS", amount: 10 },
+            { trait_value: "Susto", url: "OJOS", amount: 10 },
+            { trait_value: "Kike", url: "OJOS", amount: 5 },
+            { trait_value: "Bravos", url: "OJOS", amount: 10 },
+            { trait_value: "Eva", url: "OJOS", amount: 10 },
+            { trait_value: "Rayban", url: "OJOS", amount: 5 },
+            { trait_value: "El Siguiente Programa", url: "OJOS", amount: 5 },
+            { trait_value: "Trippin", url: "OJOS", amount: 1 },
+            { trait_value: "High", url: "OJOS", amount: 3 },
+            { trait_value: "La Forge", url: "OJOS", amount: 1 },
+            { trait_value: "Sayayin", url: "OJOS", amount: 1 },
           ],
         },
         {
           category: "porro",
           distribution: [
-            { trait_value: "porro", url: "PORRO", amount: 2 },
+            { trait_value: "si", url: "PORRO", amount: 2 },
             { trait_value: "no", url: "NONE", amount: 8 },
           ],
         },
@@ -117,9 +120,9 @@ export default {
         .map(({ value }) => value);
     },
     setColorVariant: function (object) {
-      if (object.value == "amarillo") {
+      if (object.value == "Banano") {
         return "A";
-      } else if (object.value == "maduro") {
+      } else if (object.value == "Maduro") {
         return "M";
       } else {
         return "V";
@@ -154,12 +157,17 @@ export default {
       return traits;
     },
     modifyUrlBasedOnBodyColor: function (attributes) {
-      let modified = attributes.boca.map((e, i) => {
+      console.log(attributes);
+      // the method below modifies all mouths
+      let modifiedBocas = attributes.boca.map((e, i) => {
         return {
           value: e.value,
           url: e.url.slice(0, -1) + this.setColorVariant(attributes.cuerpo[i]),
         };
       });
+      attributes.boca = modifiedBocas;
+
+      // the method below modifies selected eyes
       for (let i = 0; i < attributes.ojos.length; i++) {
         const element = attributes.ojos[i];
         if (element.url == "OJOS_9_A") {
@@ -168,7 +176,24 @@ export default {
             this.setColorVariant(attributes.cuerpo[i]);
         }
       }
-      attributes.boca = modified;
+
+      // here it covers the special case with head 8 where body url has to be changed
+
+      // the method below modifies selected heads
+      let modifiedHeads = ["HEAD_5_A", "HEAD_8_A", "HEAD_9_A"];
+      for (let i = 0; i < attributes.cabeza.length; i++) {
+        const element = attributes.cabeza[i];
+        if (modifiedHeads.includes(element.url)) {
+          if (element.url == "HEAD_8_A") {
+            attributes.cuerpo[i].url =
+              attributes.cuerpo[i].url.slice(0, -1) + "F";
+          }
+          element.url =
+            element.url.slice(0, -1) +
+            this.setColorVariant(attributes.cuerpo[i]);
+        }
+      }
+
       return attributes;
     },
     generateTraitDistributions: function (trait_object) {
@@ -233,7 +258,7 @@ export default {
     downloadCollection: function () {
       let trait_distribution = this.trait_distribution;
       for (let i = 0; i < this.collectionSize; i++) {
-        let delay = i * 500;
+        let delay = (i + 1) * 500;
         setTimeout(
           function () {
             let id = "img" + i;
@@ -256,15 +281,16 @@ export default {
           delay
         );
       }
+      this.downloadMetadata(this.metadata, this.collectionSize);
     },
     createMetadata: function (attributes, index) {
       let metadata = JSON.parse(JSON.stringify(standard));
-      metadata.name = `mnkbnn ${index + 1}`;
+      metadata.name = `MNKY BANANA ${index + 1}`;
       metadata.description = `A collection of ${
         this.collectionSize
-      } mnkbnn's on the blockchain. This is mnkbnn number ${index + 1}/${
-        this.collectionSize
-      }`;
+      } MNKY BANANAS on the blockchain. This is MNKY BANANA number ${
+        index + 1
+      }/${this.collectionSize}`;
       metadata.image = `${index}.png`;
       metadata.properties.files = [{ uri: `${index}.png`, type: "image/png" }];
       metadata.attributes = [
@@ -299,11 +325,11 @@ export default {
 
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 5px;
 }
 
 img {
-  width: 400px;
+  width: 200px;
 }
 </style>

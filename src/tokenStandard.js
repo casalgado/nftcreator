@@ -1,15 +1,15 @@
 export const standard = {
   name: "",
-  symbol: "PL",
+  symbol: "MNKYBNN",
   description: "",
   seller_fee_basis_points: 1,
   image: "",
   attributes: [],
   properties: {
     creators: [
-      { address: "5L9kJKQFibaBYuMVixN2UeCrCY8E2XMjzdjAcsxxg5g5", share: 100 },
+      { address: "CAjKgxD4wxCGNRaFstJMNqJvqNZyi6VZDVSK3arR2LGn", share: 100 },
     ],
     files: [],
   },
-  collection: { name: "palmeras", family: "palmeras" },
+  collection: { name: "MNKY BANANA", family: "MNKY BANANA" },
 };
